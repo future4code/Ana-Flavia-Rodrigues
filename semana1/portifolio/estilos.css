@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');/*para importar fonte do google*/
+@font-face{
+	font-family: 'FonteLogo';/*desta forma o usuario não precisa ter a fonte instalada, o site busca nos arquivos */
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+    }
+    p{
+    text-align: justify;
+    text-indent: 50px;
+    }
+
+    BODY{
+        font-family: arial, sans-serif;
+        background-color: #dddddd;
+        color: rgba(0,0,0,1);
+    }
+
+    div{
+        width: 930px;
+        background-color: #ffffff;
+        margin: 0px auto 0px auto; 
+        box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+        padding:10px;
+    }
+    header{
+        width: 930px;
+        background-color: #ffffff;
+        margin: 0px auto 0px auto; 
+        box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+        padding:10px;
+    }
+    a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    h1{
+        font-family: 'FonteLogo', sans-serif;
+        font-size-adjust: 30pt;
+        color: #4C0B5F;	
+    }
+
+    h2{
+        font-family: 'Titillium Web', sans-serif;
+        font-size:18pt ;
+        color:#4C0B5F ;
+        padding: 0px;
+        margin-top:0px;
+    }
+
+    h3{
+        font-family: 'Titillium Web', sans-serif;
+        font-size:13pt ;
+        color:#4C0B5F ;
+        padding: 0px;
+        margin-top:0px;
+    }
+    h4{
+        font-family: 'Titillium Web', sans-serif;
+        font-size:18pt ;
+        color:#ffffff ;
+        padding: 0px;
+        margin-top:0px;
+    }
+
+    h5{
+        font-family: 'Titillium Web', sans-serif;
+        font-size:12pt ;
+        color:#ffffff ;
+        padding: 0px;
+        margin-top:0px;
+    }
+    
+
+    span{
+        font-family: 'Titillium Web', sans-serif;
+        font-size:13pt ;
+        color:#ffffff ;
+        padding: 15px;
+        margin-top:0px;
+           
+    }
+
+    #menu{
+        text-align: right;
+        background-color: #6c059b;
+        box-shadow: none;
+        position: relative;
+        padding: 10px;
+        margin: 0px auto 0px -10px;
+    }
+
+    #foto{
+        display: inline-block;
+        width: 270px;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    #texto{
+        display: inline-block;
+        width: 610px;
+        box-shadow: none;
+        padding-top: 0px;
+        margin-top: 0px;
+        text-align: justify;
+    }
+    #cabecalho{
+        display: inline-block;
+        width: 700px;
+        box-shadow: none;
+        padding: 5px;
+    }
+    #icone{
+        display: inline-block;
+        width: 200px;
+        box-shadow: none;
+        padding: 5px; 
+        text-align: right; 
+    }
+    #Oque{
+        background-color: #6c059b;
+        box-shadow:0px 0px 10px rgba(0,0,0,.5);
+    }
+    #portifolio{
+        box-shadow: none;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 100% ;
+    }
+    #projeto{
+        
+        width: 930px;
+        box-shadow: none;
+        padding: 10px;
+        text-align: center;
+    }
+    .item{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 350px ;
+        background-color: #6c059b;
+        color: #fff;
+        padding: 0px;
+        text-align: center;
+        box-shadow: none;
+    }
+    .item:nth-child(even) {
+        background-color:#814ae6;
+        text-align: center;
+      }
+    .contato{
+        display: inline-block;
+        width: 700px;
+        box-shadow: none;
+        padding: 5px;
+        text-align: left; 
+    }
+
+    

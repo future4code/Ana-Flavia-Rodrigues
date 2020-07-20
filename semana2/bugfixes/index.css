@@ -22,6 +22,7 @@ input {
 }
 
 button:focus {
+    display: block;
     color: white;
 }
 
@@ -69,6 +70,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding: 30px 0px;
 }
 
 #container-de-descricao>ol {

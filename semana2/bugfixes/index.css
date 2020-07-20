@@ -54,6 +54,7 @@ div img {
 
 .container {
     height: 500px;
+    height: 180px;
     text-align: center;
 }
 
@@ -72,6 +73,7 @@ div img {
     background-color: #2274a5;
     color: white;
     padding: 30px 0px;
+    list-style-position: inside
 }
 
 #container-de-descricao>ol {
@@ -80,6 +82,9 @@ div img {
 
 #container-para-comprar {
     background-color: #e7eb90;
+    height: 500px;
+    height: 180px;
+    display: block;
 }
 
 #container-para-comprar>p {
@@ -144,7 +149,9 @@ td button {
     background-color: transparent;
 }
 .back{
-    margin: auto auto ;
+    height: 500px;
+    text-align: center;
+    
 }
 .comprar:hover{
     background-color: #635a3d
@@ -158,8 +165,4 @@ input{
     border-top: none;
     border-left: none;
     border-right: none;
-}
-.container-body{
-    width: 800px;
-    margin: auto auto;
 }

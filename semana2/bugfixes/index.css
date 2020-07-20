@@ -159,3 +159,7 @@ input{
     border-left: none;
     border-right: none;
 }
+.container-body{
+    width: 800px;
+    margin: auto auto;
+}

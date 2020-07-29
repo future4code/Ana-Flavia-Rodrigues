@@ -156,3 +156,189 @@
 //   }
 
 //----------DESAFIO 2 --------------------
+
+let nome = prompt("Digite seu nome completo:").toUpperCase()
+let tipoJogo = prompt("Qual jogo pretende assistir? Internacional(IN) ou Domestico(DO)?").toUpperCase()
+let etapaJogo = prompt("Informe a etapa:Semi-final (SF), decisão de terceiro lugar (DT) ou Final(FI)").toUpperCase()
+let categoriaJogo =  Number(prompt("Iforme a categoria: 1,2,3 ou 4"))
+let quantidade = prompt("informe a quantidade de ingressos que deseja")
+const cotacaoDolar = (4)
+
+if (tipoJogo === "DO"){
+    
+    if (etapaJogo === "SF" && categoriaJogo === 1){
+        const valor1 = (1320)
+        let total = (quantidade * valor1)
+        console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+         " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+         " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "DT" && categoriaJogo === 1){
+        const valor1 = (660)
+        let total = (quantidade * valor1)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+             " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+            " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 1){
+        const valor1 = (1980)
+        let total = (quantidade * valor1)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+             " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+             " valor total: R$ " +total )
+        }
+    if ( etapaJogo === "SF" && categoriaJogo === 2){
+        const valor1 = (880)
+        let total = (quantidade * valor1)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+            " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+            " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "DT" && categoriaJogo === 2){
+            const valor1 = (440)
+            let total = (quantidade * valor1)
+                console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                    " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 2){
+            const valor1 = (1320)
+            let total = (quantidade * valor1)
+                console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                     " valor total: R$ " +total )
+        }      
+    if (etapaJogo === "SF" && categoriaJogo === 3){
+            const valor1 = (550)
+            let total = (quantidade * valor1)
+                console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                 " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                 " valor total: R$ " +total )
+        } 
+    if ( etapaJogo === "DT" && categoriaJogo === 3){
+            const valor1 = (330)
+            let total = (quantidade * valor1)
+                console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                    " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 3){
+            const valor1 = (880)
+            let total = (quantidade * valor1)
+                console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                     " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "SF" && categoriaJogo === 4){
+                    const valor1 = (220)
+                    let total = (quantidade * valor1)
+                        console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                         " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                         " valor total: R$ " +total )
+        } 
+    if ( etapaJogo === "DT" && categoriaJogo === 4){
+                    const valor1 = (170)
+                    let total = (quantidade * valor1)
+                        console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                             " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                            " valor total: R$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 4){
+                    const valor1 = (330)
+                    let total = (quantidade * valor1)
+                        console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                             " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                             " valor total: R$ " +total )
+        }
+    }
+
+    else{
+
+if (tipoJogo === "IN"){
+    
+    if (etapaJogo === "SF" && categoriaJogo === 1){
+        const valor1 = (1320)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                 " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                 " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "DT" && categoriaJogo === 1){
+        const valor1 = (660)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 1){
+        const valor1 = (1980)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                     " valor total: US$ " +total )
+        }
+    if (etapaJogo === "SF" && categoriaJogo === 2){
+        const valor1 = (880)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                     " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                     " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "DT" && categoriaJogo === 2){
+        const valor1 = (440)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 2){
+        const valor1 = (1320)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        }      
+    if (etapaJogo === "SF" && categoriaJogo === 3){
+        const valor1 = (550)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "DT" && categoriaJogo === 3){
+        const valor1 = (330)
+        let total = ((quantidade * valor1)* cotacaoDolar)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 3){
+        const valor1 = (880)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        }
+    if (etapaJogo === "SF" && categoriaJogo === 4){
+        const valor1 = (220)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "DT" && categoriaJogo === 4){
+        const valor1 = (170)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        } 
+    if (etapaJogo === "FI" && categoriaJogo === 4){
+        const valor1 = (330)
+            console.log("Nome do Cliente: " + nome +" Tipo de Jogo: " + tipoJogo+ " Etapa do jogo: "+ etapaJogo+
+                                    " categoria: "+categoriaJogo+ " quantidade de ingressos: " +quantidade+ " Valor do ingresso: " +valor1+
+                                    " valor total: US$ " +total )
+        }                     
+                                        
+    }                                        
+     else {
+         console.log("Informações incorretas, tente novamente")
+ }
+}

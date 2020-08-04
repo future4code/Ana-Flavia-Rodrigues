@@ -12,10 +12,10 @@
     <header>
         <form action="">
             <label for="tarefa">Nova tarefa:</label>
-            <input type="text" id="tarefa">
+            <input type="text" id="tarefa" value="">
             <select name="dias-semana" id="dias-semana">
-                <option value="domingo">Domingo</option>
-                <option value="segunda">Segunda-feira</option>
+                <option value="domingo" id="dom">Domingo</option>
+                <option value="segunda" id="seg">Segunda-feira</option>
                 <option value="terca">Terça-feira</option>
                 <option value="quarta">Quarta-feira</option>
                 <option value="quinta">Quinta-feira</option>
@@ -24,43 +24,57 @@
             </select>
         </form>
 
-        <button>Criar tarefa</button>
+        <button onclick="criarTarefa ()" id="btCriar-tarefa">Criar tarefa</button>
         
     </header>
     <section>
         <div class="semana">
             <h3>Domingo</h3>
-            <div id="domingo"></div>
+            <div id="domingo">
+                <ul id="lista-tarefa-dom"></ul>
+            </div>
         </div>
 
         <div class="semana">
             <h3>Segunda-feira</h3>
-            <div id="segunda"></div>
+            <div id="segunda">
+                <ul id="lista-tarefa-seg"></ul>
+            </div>
         </div>
 
         <div class="semana">
             <h3>Terça-feira</h3>
-            <div id="terca"></div>
+            <div id="terca">
+                <ul id="lista-tarefa-ter"></ul>
+            </div>
         </div>
     
         <div class="semana">
             <h3>Quarta-feira</h3>
-            <div id="quarta"></div>
+            <div id="quarta">
+                <ul id="lista-tarefa-qua"></ul>
+            </div>
         </div>
     
         <div class="semana">
             <h3>Quinta-feira</h3>
-            <div id="quinta"></div>
+            <div id="quinta">
+                <ul id="lista-tarefa-qui"></ul>
+            </div>
         </div>
 
         <div class="semana">                    
             <h3>Sexta-feira</h3>               
-            <div id="sexta"></div>
+            <div id="sexta">
+                <ul id="lista-tarefa-sex"></ul>
+            </div>
         </div>
 
         <div class="semana">
             <h3>Sábado</h3>
-            <div id="sabado"></div>
+            <div id="sabado">
+                <ul id="lista-tarefa-sab"></ul>
+            </div>
         </div>
     </section>
     

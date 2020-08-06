@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Controlador de Despesas</title>
+  </head>
+  <body>
+    <div> 
+    <section id="cadastro">
+      <h2>Controlador de Despesas</h2>
+      <form action="">
+        <label for="titulo-post">Valor:</label>
+        <input type="text" id="valor-post">
+        
+        <label for="autor-post">Tipo(Casa,Viagens,Rolês,Outros):</label>
+        <select name="tipos" id="tipos-post">
+          <option value="casa" id="dom">Casa</option>
+          <option value="viagem" id="seg">Viagens</option>
+          <option value="roles">Rolês</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="outros">Outros</option>
+        </select>
+        
+        <label for="imagem-post">Imagem:</label>
+        <input type="text" id="imagem-post">
+        
+        <label for="conteudo-post">Conteúdo:</label>
+        <textarea id="conteudo-post" cols="30" rows="10"></textarea>
+      </form>
+      <button  id="btCriarPost" onclick="criaArray()" on>Criar Post</button>
+      <section id="container-de-posts">
+      </div>  
+      </section>
+  </body>
+</html>

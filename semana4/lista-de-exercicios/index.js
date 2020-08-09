@@ -149,23 +149,118 @@
 // }
 
 //4)
-let triangulo = [{a:1},{b:2},{c:3}] 
+// let triangulo = [{a:1},{b:2},{c:3}] 
 
-const nomeTriangulo = triangulo.filter((elemento) => {
+// const nomeTriangulo = triangulo.filter((elemento) => {
 
-    
+//         if ((elemento.a === elemento.b) && (elemento.b === elemento.c )) {
+//             console.log(`Equilatero`)
+//         }
 
-        if (elemento.a === elemento.b === elemento.c ) {
-            console.log(`Isoceles`)
-        }
-        if (elemento.a !== elemento.b !== elemento.c ){
-            console.log(`Escaleno`)
-        }
-     
+//         else{
 
-            console.log(`Equilatero`)
-        }
+//             if ((elemento.a === elemento.b) || (elemento.a === elemento.c) || (elemento.b === elemento.c) ){
+//                 console.log(`Isosceles`)
+//             }
         
-    )
+
+//         else{
+//             if ((elemento.a !== elemento.b) && (elemento.b !== elemento.c) && (elemento.a !== elemento.c) ){
+//                 console.log(`Isosceles`)
+//             }
+//         }
+//         }  
+// })
+
+//5)
+// a)
+// const n1 = 15
+// const n2 = 30
+//  if (n1 > n2){
+//      console.log(`O numero ${n1} é maior que ${n2}`)
+//  } else {
+//     console.log(`O numero ${n1} não é maior que ${n2}`)
+//  }
+
+//b)
+// if (n1 % n2 === 0){
+//     console.log(`${n1} é divisível por ${n2}`)
+// } else {
+//     console.log(`${n1} não é divisível por ${n2}`)
+// }
+
+//c)
+// const nDif = n1 - n2
+// console.log(nDif)
 
 
+
+//==============================================Exercícios de Funções==================================================================
+
+//1)
+// let arrayDeNumeros = [90, 390, 100, 30, 340, 50, 690, 70, 910, 240]
+// let novoArray = []
+// let maiorNumero = 0
+// let menorNumero = 0
+// const defineMaiorNumero = (array, funcao) => {    
+//     for(let numero of array) {
+//         if (numero > maiorNumero){
+//             maiorNumero = numero
+//         }
+//     }
+//     console.log(`O array original é ${array}`)
+//     console.log(`O maior numero é ${maiorNumero}`)
+//     funcao(array, maiorNumero)
+// }
+// const criaArraySemMaiorNumero = (array, maiorNumero) => {
+//     let segundoMaior = 0
+//     for (let numero of array) {
+//         if (numero !== maiorNumero) {
+//             novoArray.push(numero)
+//         }
+//     }
+//     console.log(`O novo array é ${novoArray}`)
+//     for(let numero of novoArray) {
+//         if (numero > segundoMaior){
+//             segundoMaior = numero
+//         }
+//     }
+//     console.log(`O segundo maior número do array original era ${segundoMaior}`)
+//     return segundoMaior
+// }
+// defineMaiorNumero(arrayDeNumeros, criaArraySemMaiorNumero)
+
+// const defineMenorNumero = (array1, funcao1) => {    
+//     for(let numero1 of array1) {
+//         if (numero1 > menorNumero){
+//             menorNumero = numero
+//         }
+//     }
+//     console.log(`O array original é ${array1}`)
+//     console.log(`O menor numero é ${menorNumero}`)
+//     funcao(array1, menorNumero)
+// }
+// const criaArraySemMenorNumero = (array1, menorNumero) => {
+//     let segundoMenor = 0
+//     for (let numero1 of array1) {
+//         if (numero1 !== menorNumero) {
+//             novoArray.push(numero1)
+//         }
+//     }
+//     console.log(`O novo array é ${novoArray1}`)
+//     for(let numero1 of novoArray1) {
+//         if (numero1 > segundoMenor){
+//             segundoMenor = numero1
+//         }
+//     }
+//     console.log(`O segundo menor número do array original era ${segundoMenor}`)
+//     return segundoMenor
+// }
+// defineMenorNumero(arrayDeNumeros, criaArraySemMenorNumero)
+
+//2)
+const dizOi= (alert) => {
+    console.log("Hello Labenu")
+}
+
+dizOi()

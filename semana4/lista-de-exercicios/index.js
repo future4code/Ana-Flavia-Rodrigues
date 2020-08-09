@@ -88,3 +88,84 @@
 // }
 // console.log(numero1);//-10
 // console.log(numero2);//1590
+
+
+//==================Exercicios de Lógica de Programação=========
+//1)
+ /* Podemos iterar uma lista com funções de call back:
+    forEach;
+    map;
+    filter*/
+
+//     const funcionarios = [
+//         {nome:"Maria", funcao:"tesoureira", genero:"F", abr:""},
+//         {nome:"João" ,funcao:"motorista", genero:"M", abr:""},
+//         {nome:"Daniela", funcao:"gerente", genero:"F", abr:""},
+//         {nome:"Mariana", funcao:"analista", genero:"F", abr:""},
+//         {nome:"Pedro", funcao:"dev front end", genero:"M", abr:""}
+//     ]
+//     funcionarios.forEach((item)=>{
+//        item.abr = item.nome
+//     });
+//     console.log(funcionarios);
+    
+    
+       
+//     const numeros = [5,4,8,6,3,7]
+
+//     const novoNumero = numeros.map((elem, ind) => {
+//     return `O numero na posição ${ind} do array numeros é ${elem}`
+// })
+
+// console.log(novoNumero)
+
+// const num = [5,4,8,6,3,7]
+// const numPares = numeros.filter((elemento, indPar) => {
+//         return elemento % 2 === 0
+   
+// })
+
+// console.log(numPares)
+
+//2)
+// const booleano1 = true
+// const booleano2 = false
+// const booleano3 = !booleano2
+// const booleano4 = !booleano3 
+// a) true && false && false = false
+// b) (true && false) || false => false || false = false
+// c) (false || true) && (false || true) ==> true && true ==> true
+// d) !(false && true) || !(true && true) ==> !(false) || !(true) ==> true || false ==> true
+// e) !(true) && !(true) || (true && true && true) ==> false && false || true ==> false && true ==> false
+
+//3)
+// const quantidadeDeNumerosPares = 7
+// let i = 0
+// function numPar(){
+
+//     while(i <= quantidadeDeNumerosPares) {
+//         console.log(i+=2) //o erro estava no incremento de i. Se multiplicar por 2, sempre será 0 entao dá loop infinito
+//       }
+// }
+
+//4)
+let triangulo = [{a:1},{b:2},{c:3}] 
+
+const nomeTriangulo = triangulo.filter((elemento) => {
+
+    
+
+        if (elemento.a === elemento.b === elemento.c ) {
+            console.log(`Isoceles`)
+        }
+        if (elemento.a !== elemento.b !== elemento.c ){
+            console.log(`Escaleno`)
+        }
+     
+
+            console.log(`Equilatero`)
+        }
+        
+    )
+
+

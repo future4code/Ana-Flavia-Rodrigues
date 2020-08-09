@@ -1,99 +1,3 @@
-//1.
-// 
-
-
-//-----------------EXERCICIO 1 -----------------
-// let valor = 0
-// for(let i = 0; i < 5; i++) {
-//   valor += i
-// }
-// console.log(valor)//10
-
-//-----------------EXERCICIO 2 -----------------
-// const lista = [10, 11, 12, 15, 18, 19, 21, 23, 25, 27, 30]
-// for (let numero of lista) {
-//   if (numero > 18) {
-// 		console.log(numero)
-// 	}
-// }
-
-//a.) 19, 21, 23, 25, 27, 30
-//b.)
-
-
-//----------------Desafio 1----------------------
-// const quantidadeTotal = Number(prompt("Digite a quantidade de linhas: "))
-// let quantidadeAtual = 0
-// while(quantidadeAtual < quantidadeTotal){
-//   let linha = ""
-//   for(let asteriscos = 0; asteriscos < quantidadeAtual + 1; asteriscos++){
-//     linha += "0"
-//   }
-//   console.log(linha)
-//   quantidadeAtual++
-// }//0000
-
-//-----------------EXERCICIO 3 -----------------
-//a) Imprima cada um dos valores do array original.
-// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-// let numeroAtual = 0
-
-// for (let numero of array) { 
-//     console.log(numero)
-// }
-
-//b) Imprima cada um dos valores do array original divididos por 10
-// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-// let numeroAtual = 0
-
-// for (let numero of array) { 
-//     console.log(numero/10)
-// }
-
-//c) Crie um novo array contendo, somente, os números pares do array original.
-//     Imprima esse novo array
-
-// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-// let numeroAtual = 0
-
-// for (let numero  of array) {
-//     if (numero % 2 === 0){
-//         console.log(numero)
-
-//     }
-// }
-
-//d)
-// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-//     const novoArray = []
-//     let index = 0
-//     for(let i of array){
-//         novoArray.push(index)
-//         console.log(`O elemento do index ${index++} é ${i}`)
-//     }
-
-
-//e)
-// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-// let valorMaximo = array [0]
-
-// for (let num of array) { 
-//     if(num > valorMaximo){
-//         valorMaximo = num
-//         console.log(`O maior numero é ${num}`)
-//     }
-// }
-
-// for (let num of array) { 
-//     if(num < valorMinimo){
-//         valorMinimo = num
-//         console.log(`O menor numero é ${num}`)
-//     }
-// }
-
-
-//
-
 //=====================Lista de Exercicios===============================
 
 //==================Exercicios de interpretação de código=========
@@ -111,33 +15,76 @@
 
 
 //2.
-function investeDinheiro(tipoDeInvestimento,valor){
-    let valorAposInvestimento;
+// function investeDinheiro(tipoDeInvestimento,valor){
+//     let valorAposInvestimento;
 
-    switch(tipoDeInvestimento){//se o tipo de investimento for Poupanca multiplique o valor por 1.03
-        case "Poupança":
-            valorAposInvestimento = valor * 1.03;
-            break;
-        case "Renda Fixa"://se o tipo de investimento for Renda Fixa multiplique o valor por 1.05
-            valorAposInvestimento = valor * 1.05;
-            break;
-        case "CDB"://se o tipo de investimento for CDB multiplique o valor por 1.06
-            valorAposInvestimento = valor * 1.06;
-            break;    
-        case "Ações"://se o tipo de investimento for Ações multiplique o valor por 1.05
-            valorAposInvestimento = valor * 1.1;
-            break;
-        default://se não for nenhum dos citados acima retorna a mensagem
-            alert("TIPO DE INVESTIMENTO INFORMADO INCORRETO!")
-            break;
+//     switch(tipoDeInvestimento){//se o tipo de investimento for Poupanca multiplique o valor por 1.03
+//         case "Poupança":
+//             valorAposInvestimento = valor * 1.03;
+//             break;
+//         case "Renda Fixa"://se o tipo de investimento for Renda Fixa multiplique o valor por 1.05
+//             valorAposInvestimento = valor * 1.05;
+//             break;
+//         case "CDB"://se o tipo de investimento for CDB multiplique o valor por 1.06
+//             valorAposInvestimento = valor * 1.06;
+//             break;    
+//         case "Ações"://se o tipo de investimento for Ações multiplique o valor por 1.05
+//             valorAposInvestimento = valor * 1.1;
+//             break;
+//         default://se não for nenhum dos citados acima retorna a mensagem
+//             alert("TIPO DE INVESTIMENTO INFORMADO INCORRETO!")
+//             break;
 
-    }
+//     }
 
-    return valorAposInvestimento;
-}
+//     return valorAposInvestimento;
+// }
 
-const novoMontante = investeDinheiro("Ações", 150);
-const segundoMontante = investeDinheiro("Tesouro Direto",200);
+// const novoMontante = investeDinheiro("Ações", 150);//vai buscar na case "Ações" e multiplicar por 1.1
+// const segundoMontante = investeDinheiro("Tesouro Direto",200);//vai gerar um alert("TIPO DE INVESTIMENTO INFORMADO INCORRETO!")
 
-console.log(novoMontante);
-console.log(segundoMontante);
+// console.log(novoMontante);//165
+// console.log(segundoMontante);//undefined
+
+//3)
+
+// const numeros = [25,12,55,64,121,44,11,84,51,48,14,73,111,283];
+// const array1 = [];
+// const array2 = [];
+
+// for(let numero of numeros){
+    
+//     if(numero % 2 === 0){
+//         array1.push(numero);
+//     }else{
+//         array2.push(numero);
+//     }
+// }
+// /*Cria uma variavel numero .Percorra toda a array numeros e verifique cada 
+//     elemebto . Se for par adicione no final da array criada pela variavel array1. Se não for par 
+//     adicione na array criada pela variavel array2*/
+
+// console.log("Quantidade total de numeros", numeros.length)/*imprime a Mensagem e o comprimento da array numeros =
+// Quantidade total de numeros 14*/ 
+// console.log(array1)//Imprime o comprimento do array1 = 6 
+// console.log(array2.length)//Imprime o comprimento do array2 = 8
+
+
+//4)
+// const numeros = [25,12,55,64,121,44,11,84,51,48,14,73,111,283,1,99,13,31,83,131,1,1.1,-10,25,1590];
+
+// let numero1 = Infinity;
+// let numero2 = 0;
+
+// for(let numero of numeros){
+//     if(numero < numero1){/*variavel numero1 recebe valor  inicial. Se a variavel numero (elemento da array numeros)
+//         for menor que o valor da variavel numero1, ela recebe o valor da variavel numero. */
+//         numero1 = numero;
+//     }
+//     if(numero > numero2){/*variavel numero2 recebe valor 0 inicial. Se a variavel numero (elemento da array numeros)
+//         for maior que o valor da variavel numero2, ela recebe o valor da variavel numero. */
+//         numero2 = numero;
+//     }
+// }
+// console.log(numero1);//-10
+// console.log(numero2);//1590

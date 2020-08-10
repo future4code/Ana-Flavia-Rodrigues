@@ -259,8 +259,63 @@
 // defineMenorNumero(arrayDeNumeros, criaArraySemMenorNumero)
 
 //2)
-const dizOi= (alert) => {
-    console.log("Hello Labenu")
-}
+// const dizOi= (alert) => {
+//     alert("Hello Labenu")
+// }
 
-dizOi()
+// dizOi()
+
+//==========================================================Exercícios de Objetos=======================================
+
+
+//1) Objetos são frmas de representar dados mais abstratos de maneira mais intuitiva, se aproximando mais de modelos do mundo real
+//tornando-os mais concretos.
+//quando queremos guardar os objetos de forma ordenada utilizamos o array
+
+//2)
+// const lado1 = Number()
+// const lado2 = Number()
+
+// function criaRetangulo(lado1,lado2){
+//     let perimetro = Number(2 * (lado1 + lado2))
+//     let area = Number(lado1 * lado2)
+//     console.log(`O perimetro do retangulo é ${perimetro} e a area é ${area}`)
+// }
+// criaRetangulo(10,20)
+
+
+//3)
+// const filme = {
+//     título: "Antes de partir",
+//     ano:2007,
+//     diretor: "Rob Reiner",
+//     ator1:"Jack Nicholson",
+//     ator2:"Morgan Freeman",
+//     ator3: "Sean Hayes"
+// }
+//     console.log(`Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.ator1}, ${filme.ator2}, ${filme.ator3}`)
+
+
+//4)
+
+
+// function anonimizarPessoa() {
+//         console.log(pessoaAnonima)
+//      }
+    
+//      const pessoa = {
+//         nome: "Ana Flavia",
+//         idade: 51,
+//         email: "pessoa@gmail.com",
+//         endereco: "Rua Sergio Lamarca,240 - Sorocaba -SP"
+//     }
+    
+//     const pessoaAnonima = {
+//         ... pessoa,
+//         nome: "anonimo"
+//     }
+//     anonimizarPessoa()
+
+
+
+    

@@ -317,5 +317,105 @@
 //     anonimizarPessoa()
 
 
+//=============================EXERCICIOS DE FUNÇÕES DE ARRAY ===============================================================
 
+//1)
+// const arrayPessoas = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// a)
+// const adultos = arrayPessoas.filter((elementoDoArray, index, array) => {
+//      return elementoDoArray.idade >= 20
+//  })
+//  console.log(adultos)
+//b)
+    // const menores = arrayPessoas.filter((elementoDoArray, index, array) => {
+    //      return elementoDoArray.idade < 20
+    //   })
+    //   console.log(menores)
+
+//2)
+//const array = [1,2,3,4,5,6,]
+//a)
+//  const novoArray = array.map((elementoDoArray, indexDoArray, array) => {
+//      return (elementoDoArray*2)
+//  })
+
+//  console.log(novoArray)
+
+//b)
+// const novoArray = array.map((elementoDoArray, indexDoArray, array) => {
+//       return String(elementoDoArray*3)
+//   })
+// console.log(novoArray)
+
+//c)
+// const numeros= array.filter((elementoDoArray, index, array) => {
+//          if (elementoDoArray % 2 === 0) {
+//              return const verifica = "par"
+//              String(elementoDoArray, verifica)
+//         } 
+//         const verifica = "impar"
+//         String(elementoDoArray, verifica)
+//      })
     
+//      console.log(soPares)
+
+
+//3)
+
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ]
+
+// const pessoasAutorizadas = pessoas.filter((elemento) => {
+//     return ((elemento.altura >= 1.5) && (elemento.idade >=14 && elemento.idade<=60))
+//     })
+// console.log(pessoasAutorizadas)
+
+// const pessoasNaoAutorizadas = pessoas.filter((elemento) => {
+//     return ((elemento.altura <= 1.5) || (elemento.idade <=14 || elemento.idade>=60))
+//     })
+// console.log(pessoasNaoAutorizadas)
+
+//4)
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+
+// const consultaCancelada = consultas.filter((elemento) => {
+//     return (elemento.cancelada === true) 
+    
+// })
+// console.log(`Olá,  ${ consultaCancelada.nome }. Estamos enviando esta mensagem para
+//      da sua consulta no dia ${ consultaCancelada.dataDaConsulta }. Por favor, acuse
+//     o recebimento deste e-mail.`)
+
+const contas = [
+	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
+
+// contas.forEach((elementoDoArray, index, array) => {
+//          (elementoDoArray.saldoTotal) -= (elementoDoArray.compras.reduce)
+//      })
+    
+//      console.log(contas)
+
+console.log(contas.map((total) => total.).reduce((total, compras) => total - compras));

@@ -1,23 +1,40 @@
 import React from 'react';
 import './App.css';
+
 import CardGrande from './components/CardGrande/CardGrande';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import foto from './img/perfil.jpeg';
+import icone from './img/email.png'
+import {icone1} from './img/endereco.png';
 
-function App() {
+
+function App(props) {
   return (
     <div className="App">
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
+
         <CardGrande 
           imagem={foto} 
-          nome={"Ana Flavia"} 
-          descricao={"Oi, eu sou a Ana Flavia. Sou o aluna  da Labenu. Adoro estudar nesta escola, embora não seja fácil. Mas vamos nos empenhando "}
+          nome="Ana Flavia Rodrigues" 
+          descricao="Oi, eu sou a Flávia. Sou aluna da Labenu. Estamos aprendendo a desenvolver em react. O desafio é grande, mas os professores são bons."
         />
         
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
+        />
+
+        <CardPequeno 
+          imagem={icone} 
+          email="flavia_dev@gmail.com" 
+          
+        />
+
+        <CardPequeno 
+          imagem={icone1} 
+          end="R: Sergio Lamarca, 240 - Sorocaba - SP" 
         />
       </div>
 

@@ -6,6 +6,7 @@
     width: 200px;
     padding: 15px 30px;
     margin: 10px auto;
+    background-color: rgb(67, 67, 236);
 }
 
 .image-button-container > img {

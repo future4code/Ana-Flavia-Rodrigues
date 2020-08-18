@@ -20,9 +20,18 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [],
+      tarefas: [{
+        id: Date.now(),
+        texto: 'Texto da primeira tarefa',
+        completa: false // Indica se a tarefa está completa (true ou false)
+      },
+      {
+        id: Date.now(), // Explicação abaixo
+        texto: 'Texto da segunda tarefa',
+        completa: true // Indica se a tarefa está completa (true ou false)
+      }],
       inputValue: '',
-      filtro: ''
+      filtro: 'pendentes'
     }
 
   componentDidUpdate() {
@@ -30,6 +39,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    
 
   };
 
@@ -51,7 +61,7 @@ class App extends React.Component {
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
-      switch (this.state.filter) {
+      switch (this.state.filtro) {
         case 'pendentes':
           return !tarefa.completa
         case 'completas':

@@ -32,28 +32,54 @@ class App extends React.Component {
       }],
       inputValue: '',
       filtro: 'pendentes'
-    }
+    };
 
   componentDidUpdate() {
+    const objetoTarefas = this.state.tarefas
+    localStorage.setItem('tarefas', JSON.stringify(objetoTarefas));
 
   };
 
   componentDidMount() {
+    const tarefasString = localStorage.getItem('tarefas');
+    const tarefasObjeto = JSON.parse(tarefasString);
+    if (tarefasObjeto) {
+      this.setState({tarefas: tarefasObjeto});
+      
+    }
     
 
   };
 
   onChangeInput = (event) => {
+    this.setState({
+      inputValue: event.target.value
+    })
 
   }
 
   criaTarefa = () => {
-
+    const novaTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false,
+    }
+    const novasTarefas = [...this.state.tarefas,novaTarefa];
+    this.setState({tarefas: novasTarefas})    
   }
 
   selectTarefa = (id) => {
-
-  }
+    const novaListaTarefas = this.state.tarefas.map((tarefa)=>{ 
+    if(id === tarefa.id){
+      return({
+        ...tarefa,
+        completa:!tarefa.completa})
+    }else{
+      return (tarefa)
+    }
+  })
+  this.setState({tarefas: novaListaTarefas})
+}
 
   onChangeFilter = (event) => {
 
@@ -69,7 +95,7 @@ class App extends React.Component {
         default:
           return true
       }
-    })
+    });
 
     return (
       <div className="App">

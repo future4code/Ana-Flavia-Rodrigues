@@ -1,73 +1,65 @@
 import React from 'react';
 import axios from "axios";
 import styled from 'styled-components';
+import {baseUrl, axiosConfig} from '../constants/axiosConstants';
 
 
 export default class ListarNomeUsuarios extends React.Component {
     state = {
-      usuario:[
-        {
-         id: 1,
-         name: "Frida" 
-        },
-        {
-          id: 2,
-          name: "Mulher Maravilha" 
-         }
-            ]
+      usuario:[ ]
     };
-    // // pegarNomeUsuarios = () =>{
+
+    componentDidMount = () => {
+      this.pegarNomeUsuarios();
+    };
+
+    pegarNomeUsuarios = () =>{
     
-    // //     const request = axios.get(
-    // //       "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-    // //         {
-    // //           headers:{
-    // //             Authorization: "Ana-Flavia-Jackson"
-    // //           }
-    // //         }
-    // //       );
+        const request = axios.get(
+          baseUrl ,axiosConfig
+          );
         
-    // //       request
-    // //         .then((resposta) => {
-    // //           this.setState({ name: resposta.data });
-    // //         })
-    // //         .catch((erro) => {
-    // //           console.log("Ocorreu um erro");
-    // //         });
+          request
+            .then((resposta) => {
+              this.setState({ usuario: resposta.data });
+            })
+            .catch((erro) => {
+              console.log("Ocorreu um erro!");
+            });
         
-    //   }
+      }
+
+      deleteUsuario = (userId) => {
+        
+        axios
+          .delete(`${baseUrl}/${userId}`, axiosConfig)
+          .then((resposta) => {
+            this.pegarNomeUsuarios();
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      };
     
     render() {
       return (
       <div>
-        {this.state.usuario.map(user =>{
+        {this.state.usuario.map((user) =>{
           return (
           <p key={user.id}>
             {user.name}
+            <DeleteButton onClick={() => { if (window.confirm('Tem certeza que quer deletar esse item?')) this.deleteUsuario(user.id) } }>
+                {" "}
+                X
+             </DeleteButton>
           </p>)
         })}
       </div>
       )
   }
 }
-const Form = styled.div`
-border-radius: 5px;
-padding: 5px;
-box-shadow: 0px 0px 4px #57534a;
-height: 300px;
-width: 400px;
-margin:0 auto;
-align-items:center;
-  h5 {
-    color: #57534a;
-    text-align: center;
-    font-family: Philosopher, Arial;
-}
-`
-const Input = styled.input`
-height: 30px;
-width: 150px;
-display: flex;
-border-radius: 5px;
-margin: 0 auto;
-`
+
+
+const DeleteButton = styled.span`
+  color: red;
+`;

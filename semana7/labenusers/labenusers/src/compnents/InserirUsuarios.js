@@ -44,10 +44,21 @@ export default class inserirUsuarios extends React.Component {
     render() {
       return (
       <div>
-         <p>Nome:<input value={this.state.nameValue} placeholder='Nome do Usuário' onChange={this.onChangeNameValue}/></p>
-         <p>E-mail:<input value={this.state.emailValue} placeholder='Email do Usuário'onChange={this.onChangeEmailValue}/></p>
+         <p>Nome:<Input value={this.state.nameValue} 
+                        placeholder='Nome do Usuário'   
+                        onChange={this.onChangeNameValue}/></p>
+         <p>E-mail:<Input value={this.state.emailValue}     
+                        placeholder='Email do Usuário'
+                        onChange={this.onChangeEmailValue}/></p>
          <p><button onClick={this.inserirUsuarios}>Inserir Usuário</button></p>
       </div>)
   
   }
-}
+};
+const Input = styled.input`
+height: 30px;
+width: 150px;
+display: flex;
+border-radius: 5px;
+margin: 0 auto;
+box-shadow: 0px 0px 2px #57534a;`

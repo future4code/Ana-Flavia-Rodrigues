@@ -5,60 +5,61 @@ import styled from 'styled-components';
 
 export default class App extends React.Component {
   state = {
-    listDragon: [],
-    imageDragon: ""
+    listShip: [],
+    imageShip: "",
+    idShip:""
   };
 
-  catchAllDragons = () => {
+  catchAllShips = () => {
     axios
-      .get("https://api.spacexdata.com/v3/dragons")
+      .get("https://api.spacexdata.com/v3/ships")
       .then((resposta) => {
-        this.setState({ listDragon: resposta });
-        console.log(resposta)
+        this.setState({ listShip: resposta.data});
+        console.log(resposta.data)
       })
       .catch((erro) => {
         console.log(erro);
       });
   };
 
-  catchOneDragon = (id) => {
+  catchOneShip = (id) => {
     axios
-      .get(`https://api.spacexdata.com/v3/dragons/${id}`)
+      .get(`https://api.spacexdata.com/v3/Ships/${id}`)
       .then((resposta) => {
-        this.setState({ imageDragon: resposta});
-        console.log(resposta)
+        this.setState({imageShip: resposta.data.image});
+                
       })
       .catch((erro) => {
         console.log(erro);
       });
   };
 
-  catchDragon = (evento) => {
-    const nameDragon = evento.target.value;
-    this.catchOneDragon(nameDragon);
+  catchShip = (evento) => {
+    const nameShip = evento.target.value;
+    this.catchOneShip(nameShip);
   };
 
   componentDidMount() {
-    this.catchAllDragons();
+    this.catchAllShips();
   }
 
   render() {
     return (
       <AppContainer>
-        {this.state.imageDragon && (
-          <img alt={"Imagem"} src={this.state.imageDragon} />
+        {this.state.imageShip && (
+          <img alt={"Imagem"} src={this.state.imageShip} />
         )}
-        <select onChange={this.catchDragon}>
+        <select onChange={this.catchShip}>
           <option value={""}></option>
-          {this.state.listDragon.map((item) => {
-            return (
-              <option key={item.id} value={item.name}>
-                {item.name}
+          {this.state.listShip.map((item)=>{
+            return(
+              <option key={item.ship_id} value={item.ship_id}>
+                {item.ship_name}
               </option>
             );
           })}
         </select>
-      </AppContainer>
+        </AppContainer>
     );
   }
 }
@@ -66,3 +67,4 @@ const AppContainer = styled.div`
 text-align: center;
 font-family: Philosopher, Arial;
 `
+

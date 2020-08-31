@@ -1,15 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import CriarPlaylist from './components/CriarPlaylist'
+import PlayList from './components/PlayList/PlayList'
+import Midia from './components/Midia/Midia'
+import Lateral from './components/Lateral/Lateral';
+import Logo from './imagem/logo.png'
+
 
 class App extends React.Component {
+  state = {
+    nameValue: " " 
+  };
+
+
+  
   render(){
 
     return (
       <AppContainer>
-        <h1>LABEFY</h1>
-        <CriarPlaylist/>
+        
+        <div>
+        <img src={Logo}/>
+          <Lateral/>
+          
+        </div>
+        <div>
+          <PlayList/>
+          <Midia/>
+          </div>
       </AppContainer>
     
     );
@@ -18,5 +36,12 @@ class App extends React.Component {
 
 export default App;
 const AppContainer = styled.div`
-text-align: center;
+display: grid;
+border: 1px solid grey;
+grid-template-columns:1fr 2fr ;
+padding: 16px;
+gap:5px;
+Background:#1C1C1C;
+color:white;
+
 `

@@ -200,3 +200,10 @@ return maior
 console.log(indiceMaior(numeros))
 
 //indiceMaior(numeros)
+
+
+//DESAFIO
+//1)
+// const exerc = (item) =>{
+//     console.log(item)
+// }

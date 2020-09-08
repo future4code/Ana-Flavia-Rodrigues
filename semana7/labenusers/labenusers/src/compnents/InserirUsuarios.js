@@ -8,7 +8,6 @@ export default class inserirUsuarios extends React.Component {
     state = {
         nameValue : "",
         emailValue : ""
-      
     }
     inserirUsuarios = () =>{
         const body = {

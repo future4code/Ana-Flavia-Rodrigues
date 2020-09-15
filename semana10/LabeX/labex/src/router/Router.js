@@ -38,5 +38,6 @@ const Router = () => {
             </Route>
         </Switch>
     </BrowserRouter>
-  )}
+  );
+}
 export default Router;

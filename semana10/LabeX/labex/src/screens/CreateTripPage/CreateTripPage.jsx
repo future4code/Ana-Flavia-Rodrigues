@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CreateTripePage() {
+function CreateTripPage() {
   return (
     <div >
         Cadastro de Viagens
@@ -8,4 +8,4 @@ function CreateTripePage() {
   );
 }
 
-export default CreateTripePage;
+export default CreateTripPage;

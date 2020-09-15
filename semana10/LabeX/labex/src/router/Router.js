@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from '../screens/HomePage/HomePage'
 import AplicationFormPage from '../screens/AplicationFormPage/AplicationFormPage';
-import CreateTripePage from '../screens/CreateTripePage/CreateTripePage';
+import CreateTripePage from '../screens/CreateTripPage/CreateTripPage';
 import ListTripsPage from '../screens/ListTripsPage/ListTripsPage';
 import LoginPage from '../screens/LoginPage/LoginPage';
 import RouterPage from '../screens/RouterPage/RouterPage';
@@ -15,22 +15,22 @@ const Router = () => {
             <Route exact path="/">
                 <HomePage/>
             </Route>
-            <Route exact path="/formulario">
+            <Route exact path="/application-form">
                 <AplicationFormPage/>
             </Route>
-            <Route exact path="/viagens">
+            <Route exact path="/trips/create">
                 <CreateTripePage/>
             </Route>
-            <Route exact path="/lista_viagens">
+            <Route exact path="/trips/list">
                 <ListTripsPage/>
             </Route> 
             <Route exact path="/login">
                 <LoginPage/>
             </Route>
-            <Route exact path="/roteiro">
+            <Route exact path="/router">
                 <RouterPage/>
             </Route>
-            <Route exact path="/detalhes">
+            <Route exact path="/trips/details">
                 <TripDetailsPage/>
             </Route>
             <Route>

@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
-import { getActivities } from "../requests";
+import axios from "axios";
 
-// const useRequestData = (url, initialState) => {
-//   const [data, setData] = useState(initialState);
+const useRequestData = (url, initialState) => {
+  const [data, setData] = useState(initialState);
 
-//   useEffect(() => {
-//     getActivities(url, setData);
-//   }, [url]);
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((resposta) => {
+        setData(resposta.data);
+        console.log(resposta.data.trips)
+      })
+      .catch((erro) => {
+        console.log(erro);
+      });
+  }, [url]);
 
-//   const updateData = () => {
-//     getActivities(url, setData);
-//   };
+  return data;
+};
 
-//   return [data, updateData];
-// };
-
-// export default useRequestData;
+export default useRequestData;

@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
+import {MainContainer,ButtonContainer } from './styled';
+import Logo from '../../assets/img/Logo.gif';
+ 
 
 function HomePage() {
   const history = useHistory();
@@ -10,14 +13,30 @@ function HomePage() {
   const gotoFormPage = () => {
     history.push("/application-form");
   }
-  
+
+   
   return (
-    <div >
-        <p>Home Page</p>
-        <button onClick={gotoFormPage}>Ir para o formulário</button>
-        <button onClick={gotoLoginPage}>Fazer Login</button>
-    </div>
+    <MainContainer >
+      <img src={Logo}/>
+    <ButtonContainer>
+      <button onClick={gotoLoginPage}>Fazer Login</button>
+      <button onClick={gotoFormPage}>Ir para o formulário</button>
+    </ButtonContainer>
+
+    </MainContainer>
   );
 }
+
+
+
+  
+//   return (
+//     <div >
+//         <p>Home Page</p>
+//         <button onClick={gotoFormPage}>Ir para o formulário</button>
+//         <button onClick={gotoLoginPage}>Fazer Login</button>
+//     </div>
+//   );
+// }
 
 export default HomePage;

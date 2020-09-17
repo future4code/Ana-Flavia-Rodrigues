@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../assets/img/Logo.gif';
-import {MainContainer,ButtonContainer } from './styled';
 import axios from 'react';
 
 
@@ -26,15 +25,7 @@ function LoginPage() {
       history.push("/application-form");
     }
   return (
-    <MainContainer >
-      <img src={Logo}/>
-    <ButtonContainer>
-    <button onClick={gotoLogin}>Fazer Login</button>
-    <button onClick={gotoFormPage}>Ir para o formulário</button>
-    <input>e-mail: </input>
-    <input>senha: </input>
-    </ButtonContainer>
-    </MainContainer>
+   <div></div>
   );
 }
 export default LoginPage;

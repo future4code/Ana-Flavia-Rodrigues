@@ -1,19 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState  } from 'react';
 import useRequestData from '../../hooks/useRequestData';
+import axios from 'axios';
+import {CardTrip , CardTripContainer} from './styled';
+import { useHistory } from 'react-router-dom';  
+
 
 function ListTripsPage() {
-  const minhaAtividade = useRequestData(
-    "https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips",
-    {}
-  );
+    const history = useHistory();
+    const gotoFormPage = () => {
+      history.push("/application-form");
+    }
+   
 
-  return (
-    
-    <div className="App">
-      <p>{minhaAtividade.photo}</p>
+
+  const [trips , setTrips] = useState([])
+
+  useEffect(() => {
+    axios
+    .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips")
+    .then((resposta) => {
+      console.log(resposta.data.trips)
+      setTrips(resposta.data.trips)
       
-    </div>
-  );
+    })
+    .catch((erro) => {
+      console.log(erro);
+    });
+    
+
+  },[])
+
+  const listTrip = trips.map((trip) => {
+    return(
+      <CardTrip onClick={gotoFormPage}>
+       <h2>{trip.name}</h2>
+       <h3>{trip.description}</h3>   
+       <p>Destino: {trip.planet}</p>
+       <p>Data de Saída: {trip.date}</p>
+       <p>Data de Saída: {trip.durationInDays}</p> 
+      </CardTrip>
+      
+    )
+  })
+
+
+   return (
+     <CardTripContainer>
+       {listTrip}
+     </CardTripContainer>
+   )
+    
 }
 
 

@@ -1,11 +1,15 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
+import {FormContainer, Input, TextArea , Select} from "./styled"
 
 export default function AplicationFormPage() {
   const { form, onChange, resetState } = useForm({
     primeiroNome: "",
     idade: 0,
-    email: ""
+    profissao: "",
+    motivo:"",
+    pais:""
+    
   });
 
   const handleInputChange = (event) => {
@@ -22,9 +26,11 @@ export default function AplicationFormPage() {
   };
 
   return (
-    <div className="App">
+    <FormContainer>
       <form onSubmit={handleSubmittion}>
-        <input
+      <h2>[Nome da Viagem Escolhida]</h2>
+       <h5>Nome do Candidato:</h5>
+        <Input
           value={form.primeiroNome}
           name="primeiroNome"
           onChange={handleInputChange}
@@ -33,7 +39,9 @@ export default function AplicationFormPage() {
           title="Nó minimo 3 letras"
           required
         />
-        <input
+
+       <h5>Idade:</h5>
+        <Input
           value={form.idade}
           name="idade"
           onChange={handleInputChange}
@@ -41,15 +49,40 @@ export default function AplicationFormPage() {
           type="number"
           required
         />
-        <input
-          value={form.email}
-          name="email"
+
+       <h5>Profissão:</h5> 
+        <Input
+          value={form.profissao}
+          name="profissao"
           onChange={handleInputChange}
-          type="email"
+          type="text"
+          pattern="[A-Za-z]{10,}"
+          title="No minimo 10 letras"
           required
         />
-        <button>Enviar</button>
+
+      <h5>Pais:</h5>
+        <Select
+          value={form.pais}
+          name="pais"
+          onChange={handleInputChange}
+          type="pais"
+          required
+        />
+
+      <h5>Porque devemos escolher você?:</h5>
+        <TextArea
+          value={form.motivo}
+          name="motivo"
+          onChange={handleInputChange}
+          type="text"
+          pattern="[A-Za-z]{30,}"
+          title="No minimo 30 letras"
+          required
+        />
+
+        <p><button>Enviar</button></p>
       </form>
-    </div>
+    </FormContainer>
   );
 }

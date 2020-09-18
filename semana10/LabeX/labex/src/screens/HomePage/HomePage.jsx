@@ -10,8 +10,8 @@ function HomePage() {
   const gotoLoginPage = () => {
     history.push("/login");
   }
-  const gotoFormPage = () => {
-    history.push("/application-form");
+  const gotoListTripPage = () => {
+    history.push("/trips/list");
   }
 
    
@@ -19,8 +19,8 @@ function HomePage() {
     <MainContainer >
       <img src={Logo}/>
     <ButtonContainer>
+      <button onClick={gotoListTripPage}>Quero Viajar!</button>
       <button onClick={gotoLoginPage}>Fazer Login</button>
-      <button onClick={gotoFormPage}>Ir para o formulário</button>
     </ButtonContainer>
 
     </MainContainer>

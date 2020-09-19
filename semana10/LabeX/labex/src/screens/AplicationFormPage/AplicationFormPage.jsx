@@ -1,8 +1,11 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
 import {FormContainer, Input, TextArea , Select} from "./styled"
+import ListTripsPage from "../ListTripsPage/ListTripsPage"
 
-export default function AplicationFormPage() {
+export default function AplicationFormPage(props) {
+  
+
   const { form, onChange, resetState } = useForm({
     primeiroNome: "",
     idade: 0,
@@ -24,11 +27,13 @@ export default function AplicationFormPage() {
     console.log(form);
     resetState();
   };
-
+  
   return (
+    
     <FormContainer>
+      
       <form onSubmit={handleSubmittion}>
-      <h2>[Nome da Viagem Escolhida]</h2>
+      <h2>{props.trip}</h2>
        <h5>Nome do Candidato:</h5>
         <Input
           value={form.primeiroNome}

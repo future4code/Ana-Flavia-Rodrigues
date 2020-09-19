@@ -30,9 +30,13 @@ function ListTripsPage() {
 
   },[])
 
+  const changeClickedShowName = (name) => {
+    setTrips({clickedShowName: name});
+  };
+
   const listTrip = trips.map((trip) => {
     return(
-      <CardTrip onClick={gotoFormPage}>
+      <CardTrip onClick={gotoFormPage} changeShowName={changeClickedShowName}>
        <h2>{trip.name}</h2>
        <h3>{trip.description}</h3>   
        <p>Destino: {trip.planet}</p>
@@ -43,9 +47,10 @@ function ListTripsPage() {
     )
   })
 
-
+  
    return (
      <CardTripContainer>
+       
        {listTrip}
      </CardTripContainer>
    )

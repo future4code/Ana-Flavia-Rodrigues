@@ -2,7 +2,8 @@ import React, { useEffect, useState  } from 'react';
 import useRequestData from '../../hooks/useRequestData';
 import axios from 'axios';
 import {CardTrip , CardTripContainer} from './styled';
-import { useHistory } from 'react-router-dom';  
+import { useHistory } from 'react-router-dom'; 
+import { Link } from 'react-router-dom' 
 
 
 function ListTripsPage() {
@@ -36,21 +37,24 @@ function ListTripsPage() {
 
   const listTrip = trips.map((trip) => {
     return(
-      <CardTrip onClick={gotoFormPage} changeShowName={changeClickedShowName}>
+      
+      <Link to={`/trips/details/${trip.id}`}>
+      <CardTrip onClick={gotoFormPage} >
        <h2>{trip.name}</h2>
-       <h3>{trip.description}</h3>   
+       {/* <h3>{trip.description}</h3>   
        <p>Destino: {trip.planet}</p>
        <p>Data de Saída: {trip.date}</p>
-       <p>Data de Saída: {trip.durationInDays}</p> 
+       <p>Data de Saída: {trip.durationInDays}</p>  */}
       </CardTrip>
-      
+      </Link>
     )
   })
 
   
    return (
      <CardTripContainer>
-       
+       <h1>Lista de Viagens</h1>
+       <button>Criar Viagem</button>
        {listTrip}
      </CardTripContainer>
    )

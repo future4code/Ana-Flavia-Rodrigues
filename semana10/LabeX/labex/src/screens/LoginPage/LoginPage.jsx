@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import  useHistory  from 'react-router-dom';
 import Logo from '../../assets/img/Logo.gif';
 import axios from 'react';
 import LoginContainer from './styled';
 
 
 
-function LoginPage() {
+export default function LoginPage(props){
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('')
@@ -19,32 +19,34 @@ function LoginPage() {
     setSenha(event.target.value)
   }
   
-  const getLogin  = () => null //função que vai chamr a API
   
-  const body = {
-    "email": email, //"astrodev@gmail.com.br",
-	  "password": senha //"123456"
+
+  const onSubmitLogin = (event) => {
+    event.preventDefault()
+    const body = {
+      email: email,
+      password: senha
+    }
+    axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabarito/login', body).then((response) => {
+      console.log(response.data)
+    })
   }
-
-
   return (
    <LoginContainer>
-    <h1>Login</h1>
-    <input value={email} 
-      onChange={handleEmail} 
-      placeholder="e-mail">
-    </input>
+      <h1>Login</h1>
+        <input value={email} 
+          onChange={handleEmail} 
+          placeholder="e-mail">
+        </input>
 
-    <input value={senha}
-      onChange={handleSenha} 
-      placeholder="senha"
-      type="password">
-    </input>
-     <button onClick={getLogin}>Enviar</button>
-
+        <input value={senha}
+          onChange={handleSenha} 
+          placeholder="senha"
+          type="password">
+        </input>
+      <button onClick={onSubmitLogin}>Enviar</button>
    </LoginContainer>
 
 
   );
   }
-export default LoginPage;

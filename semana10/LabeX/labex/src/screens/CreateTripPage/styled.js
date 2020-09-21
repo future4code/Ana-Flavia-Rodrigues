@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const CreateContainer = styled.div`
+export const CreateContainer = styled.form`
 display: grid;
 flex-wrap: wrap;
 justify-content: center;
 padding: 2px;
 margin:0 auto;
 margin-top: 5px;
-gap:0.5px;
+// gap:0.5px;
 width: 30vw;
 height: 95vh;
 align-items: center;

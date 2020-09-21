@@ -3,16 +3,19 @@ import useRequestData from '../../hooks/useRequestData';
 import axios from 'axios';
 import {CardTrip , CardTripContainer} from './styled';
 import { useHistory } from 'react-router-dom'; 
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
+import {useProtectedPage} from '../../hooks/useProtectedPage/useProtectedPage' 
 
 
 function ListTripsPage() {
     const history = useHistory();
-    const gotoFormPage = () => {
-      history.push("/application-form");
+
+
+    const gotoCreateTripePage = () => {
+      history.push("/trips/create");
     }
    
-
+    useProtectedPage()
 
   const [trips , setTrips] = useState([])
 
@@ -20,7 +23,7 @@ function ListTripsPage() {
     axios
     .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips")
     .then((resposta) => {
-      console.log(resposta.data.trips)
+      
       setTrips(resposta.data.trips)
       
     })
@@ -39,14 +42,14 @@ function ListTripsPage() {
     return(
       
       <Link to={`/trips/details/${trip.id}`}>
-      <CardTrip onClick={gotoFormPage} >
+      <CardTrip  >
        <h2>{trip.name}</h2>
        {/* <h3>{trip.description}</h3>   
        <p>Destino: {trip.planet}</p>
        <p>Data de Saída: {trip.date}</p>
        <p>Data de Saída: {trip.durationInDays}</p>  */}
       </CardTrip>
-      </Link>
+    </Link>
     )
   })
 
@@ -54,7 +57,7 @@ function ListTripsPage() {
    return (
      <CardTripContainer>
        <h1>Lista de Viagens</h1>
-       <button>Criar Viagem</button>
+       <button onClick={gotoCreateTripePage}>Criar Viagem</button>
        {listTrip}
      </CardTripContainer>
    )

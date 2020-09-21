@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import  useHistory  from 'react-router-dom';
-import Logo from '../../assets/img/Logo.gif';
-import axios from 'react';
 import LoginContainer from './styled';
+import axios from 'axios'
+import { useHistory } from 'react-router-dom';
 
 
+export default function LoginPage(){
 
-export default function LoginPage(props){
+  const history = useHistory();
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('')
@@ -18,7 +18,9 @@ export default function LoginPage(props){
   const handleSenha = (event) => {
     setSenha(event.target.value)
   }
-  
+  const gotoListTripsPage = (event) => {
+    history.push('/trips/list');
+  }
   
 
   const onSubmitLogin = (event) => {
@@ -27,10 +29,17 @@ export default function LoginPage(props){
       email: email,
       password: senha
     }
-    axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabarito/login', body).then((response) => {
-      console.log(response.data)
+    axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/login', body)
+    .then((response) => {
+      
+      window.localStorage.setItem('token', response.data.token)
+      gotoListTripsPage()
     })
+    .catch((erro) => {
+      alert("Você não tem autorização para acessar essa página");
+    });
   }
+
   return (
    <LoginContainer>
       <h1>Login</h1>

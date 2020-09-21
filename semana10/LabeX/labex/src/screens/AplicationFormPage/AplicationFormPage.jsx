@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "../../hooks/useForm";
-import {FormContainer, Input, TextArea , Select} from "./styled"
-import ListTripsPage from "../ListTripsPage/ListTripsPage"
+import {FormContainer, Input, TextArea , Select , Container} from "./styled"
 import axios from "axios"
+import Header from "../../components/header/header";
 
 export default function AplicationFormPage(props) {
 
@@ -12,7 +12,7 @@ export default function AplicationFormPage(props) {
     axios
     .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips")
     .then((resposta) => {
-      console.log(resposta.data.trips)
+      
       setTrips(resposta.data.trips)
       
     })
@@ -36,22 +36,20 @@ export default function AplicationFormPage(props) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-
     onChange(name, value);
   };
 
   const handleSubmittion = (event) => {
     event.preventDefault();
     
-    const body = {
-      name: form.primeiroNome,
-      age: form.idade,
-      applicationText: form.motivo,
-      profession: form.profissao,
-      country: form.pais
-    }
+  const body = {
+    name: form.primeiroNome,
+    age: form.idade,
+    applicationText: form.motivo,
+    profession: form.profissao,
+    country: form.pais
+  }
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips/${form.viagem}/apply`,body)
-
     
     resetState();
    };
@@ -59,9 +57,11 @@ export default function AplicationFormPage(props) {
   return (
     
     <FormContainer>
+      <Header/>
       <h1>Cadastrar-se Para Viagem</h1>
       <form onSubmit={handleSubmittion}>
-      <h2>{props.trip}</h2>
+      {/* <h2>{props.trip}</h2> */}
+      <Container>
        <Input
           placeholder= "Nome do Candidato"
           value={form.primeiroNome}
@@ -136,6 +136,7 @@ export default function AplicationFormPage(props) {
         />
 
         <p><button type='submit'>Enviar</button></p>
+        </Container>
       </form>
     </FormContainer>
   );

@@ -43,7 +43,7 @@ background-color: #e7a61a;
         text-decoration:none;
     }
 `
-export const CandidateItem = styled.div`
+export const ContainerItem = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

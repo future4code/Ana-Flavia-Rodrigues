@@ -9,7 +9,7 @@ const useRequestData = (url,initialState) => {
       .get(url)
       .then((resposta) => {
         setData(resposta.data);
-        console.log(resposta.data.trips)
+        
       })
       .catch((erro) => {
         console.log(erro);

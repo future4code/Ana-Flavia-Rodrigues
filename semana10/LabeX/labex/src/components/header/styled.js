@@ -7,8 +7,9 @@ grid-template-columns:1fr 2fr 1fr ;
 flex-wrap: wrap;
 justify-content: center;
 gap: 16px;
-width: 20vw;
+width: 100%;
 height: 15vh;
+background: #000
     
 `
 export const LogoL = styled.img`

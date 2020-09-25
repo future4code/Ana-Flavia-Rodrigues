@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div>
       <PlannerPage/>
-      <Tarefas/>
+      
     </div>
   );
 }

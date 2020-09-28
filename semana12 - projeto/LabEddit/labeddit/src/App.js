@@ -6,18 +6,18 @@ import { BrowserRouter} from 'react-router-dom';
 import MainAppBar from './components/AppBar/MainAppBar'
 import styled from 'styled-components'
 
-const InnerScreenContainer = styled.div`
-  padding-top: 64px;
-`
+// const InnerScreenContainer = styled.div`
+//   padding-top: 64px;
+// `
 
 const  App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <MainAppBar/>
-        <InnerScreenContainer>
+        {/* <InnerScreenContainer> */}
           <Router/>
-        </InnerScreenContainer>
+        {/* </InnerScreenContainer> */}
       </BrowserRouter>
     </ThemeProvider>
   );

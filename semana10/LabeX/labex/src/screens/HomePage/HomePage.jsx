@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import {MainContainer,ButtonContainer } from './styled';
+import {MainContainer,ButtonContainer,Container} from './styled';
 import Logo from '../../assets/img/Logo.gif';
  
 
@@ -10,18 +10,20 @@ function HomePage() {
   const gotoLoginPage = () => {
     history.push("/login");
   }
-  const gotoListTripPage = () => {
-    history.push("/trips/list");
+  const gotoAplicationFormPage = () => {
+    history.push("/application-form");
   }
 
    
   return (
     <MainContainer >
-      <img src={Logo}/>
-    <ButtonContainer>
-      <button onClick={gotoListTripPage}>Quero Viajar!</button>
-      <button onClick={gotoLoginPage}>Fazer Login</button>
-    </ButtonContainer>
+      <Container>
+        <img src={Logo}/>
+          <ButtonContainer>
+            <button onClick={gotoAplicationFormPage}>Quero Viajar!</button>
+            <button onClick={gotoLoginPage}>Fazer Login</button>
+          </ButtonContainer>
+      </Container>
 
     </MainContainer>
   );

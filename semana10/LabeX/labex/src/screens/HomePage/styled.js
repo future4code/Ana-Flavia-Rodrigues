@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 
+
 export const Logo = styled.img`
   width: 400px;
   height: 400px;
 `;
 
-export const MainContainer = styled.div`
+export const Container = styled.div`
 display: grid;
 border: 1px solid grey;
 grid-template-columns:1fr 1fr ;
@@ -21,9 +22,16 @@ justify-self: center;
 border-radius: 10px;
 border-width: 2px;
 border-style: solid;
-box-shadow: 20px;
+box-shadow: 50px;
+shadow-color: grey
+ 
 `;
 
+export const MainContainer = styled.div`
+width: 100vw;
+height: 100vh;
+background: #000
+`
 // export const ShowTitle = styled.p`
 //   margin: 4px;
 //   text-align: center;
@@ -37,6 +45,7 @@ grid-gap: 10px;
 padding: 10%;
 align-items: center;
 justify-self: center;
+
 `
 const Logo1 = styled.img`
   width:100%;

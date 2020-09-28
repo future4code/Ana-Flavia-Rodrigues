@@ -5,7 +5,7 @@ import AplicationFormPage from '../screens/AplicationFormPage/AplicationFormPage
 import CreateTripePage from '../screens/CreateTripPage/CreateTripPage';
 import ListTripsPage from '../screens/ListTripsPage/ListTripsPage';
 import LoginPage from '../screens/LoginPage/LoginPage';
-import RouterPage from '../screens/RouterPage/RouterPage';
+
 import TripDetailsPage from '../screens/TripDetailsPage/TripDetailsPage';
 
 const Router = () => {
@@ -27,10 +27,8 @@ const Router = () => {
             <Route exact path="/login">
                 <LoginPage/>
             </Route>
-            <Route exact path="/router">
-                <RouterPage/>
-            </Route>
-            <Route exact path="/trips/details">
+            
+            <Route exact path="/trips/details/:Id">
                 <TripDetailsPage/>
             </Route>
             <Route>

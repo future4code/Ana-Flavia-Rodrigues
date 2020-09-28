@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "../../hooks/useForm";
-import {FormContainer, Input, TextArea , Select} from "./styled"
-import ListTripsPage from "../ListTripsPage/ListTripsPage"
+import {FormContainer, Input, TextArea , Select , Container} from "./styled"
+import axios from "axios"
+import Header from "../../components/header/header";
 
 export default function AplicationFormPage(props) {
+
+  const [trips , setTrips] = useState([])
+
+  useEffect(() => {
+    axios
+    .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips")
+    .then((resposta) => {
+      
+      setTrips(resposta.data.trips)
+      
+    })
+    .catch((erro) => {
+      console.log(erro);
+    });
+    
+
+  },[])
   
 
   const { form, onChange, resetState } = useForm({
@@ -11,42 +29,53 @@ export default function AplicationFormPage(props) {
     idade: 0,
     profissao: "",
     motivo:"",
-    pais:""
+    pais:"",
+    viagem: ""
     
   });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-
     onChange(name, value);
   };
 
   const handleSubmittion = (event) => {
     event.preventDefault();
-
-    console.log(form);
+    
+  const body = {
+    name: form.primeiroNome,
+    age: form.idade,
+    applicationText: form.motivo,
+    profession: form.profissao,
+    country: form.pais
+  }
+    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/flavia/trips/${form.viagem}/apply`,body)
+    
     resetState();
-  };
+   };
   
   return (
     
     <FormContainer>
-      
+      <Header/>
+      <h1>Cadastrar-se Para Viagem</h1>
       <form onSubmit={handleSubmittion}>
-      <h2>{props.trip}</h2>
-       <h5>Nome do Candidato:</h5>
-        <Input
+      {/* <h2>{props.trip}</h2> */}
+      <Container>
+       <Input
+          placeholder= "Nome do Candidato"
           value={form.primeiroNome}
           name="primeiroNome"
           onChange={handleInputChange}
           type="text"
           pattern="[A-Za-z]{3,}"
-          title="Nó minimo 3 letras"
+          title="No minimo 3 letras"
           required
         />
 
-       <h5>Idade:</h5>
+       
         <Input
+          placeholder= "Idade"
           value={form.idade}
           name="idade"
           onChange={handleInputChange}
@@ -55,8 +84,9 @@ export default function AplicationFormPage(props) {
           required
         />
 
-       <h5>Profissão:</h5> 
+       
         <Input
+          placeholder= "Profissão"
           value={form.profissao}
           name="profissao"
           onChange={handleInputChange}
@@ -66,17 +96,36 @@ export default function AplicationFormPage(props) {
           required
         />
 
-      <h5>Pais:</h5>
+      
         <Select
+          placeholder= "Viagem"
+          value={form.viagem}
+          name="viagem"
+          onChange={handleInputChange}
+          type="text"
+          required
+        >
+          {trips.map((trip) => {
+            return <option value={trip.id}>{trip.name}</option>
+          })}
+         
+        </Select> 
+
+        <Select
+          placeholder= "Pais"
           value={form.pais}
           name="pais"
           onChange={handleInputChange}
-          type="pais"
+          type="text"
           required
-        />
+        >
+          <option value='Brasil' >Brasil</option>
+          <option value='EUA'>EUA </option>
+        </Select>          
 
-      <h5>Porque devemos escolher você?:</h5>
+     
         <TextArea
+          placeholder= "Porque devemos escolher você?:"
           value={form.motivo}
           name="motivo"
           onChange={handleInputChange}
@@ -86,7 +135,8 @@ export default function AplicationFormPage(props) {
           required
         />
 
-        <p><button>Enviar</button></p>
+        <p><button type='submit'>Enviar</button></p>
+        </Container>
       </form>
     </FormContainer>
   );

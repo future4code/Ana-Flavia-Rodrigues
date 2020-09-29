@@ -1,59 +1,32 @@
-// import React from 'react'
-// import AppBar from '@material-ui/core/AppBar'
-// import Toolbar from '@material-ui/core/Toolbar'
-// import { useHistory } from 'react-router-dom'
-// import Button from '@material-ui/core/Button'
-// import { goToFeedPage } from '../../router/Coordinator';
-
-// const MainAppBar = () => {
-//   const history = useHistory()
-//   return(
-//     <AppBar>
-//       <Toolbar>
-//         <Button onClick={() => goToFeedPage(history)}>LabEddit</Button>
-//         <Button onClick={() => null}>Logout</Button>
-//       </Toolbar>
-//     </AppBar>
-//   )
-// }
-
-// export default MainAppBar
 
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import { BtContainer , AppBarTitle } from './styled';
+import { useHistory } from 'react-router-dom'
+import { goToFeedPage } from '../../router/Coordinator';
+import Icone from '../../assets/iconebranco.png'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
 
 export default function MainAppBar() {
-  const classes = useStyles();
+  const history = useHistory()
 
   return (
-    <div className={classes.root}>
+    <div >
       <AppBar position="static">
+        
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            LabEddit
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <BtContainer>
+            <Button color="inherit" onClick={()=>goToFeedPage(history)}>
+            <img alt={'logo'} src={Icone}/>
+              <AppBarTitle variant={'h6'}>LabEddit</AppBarTitle>
+            </Button>
+            <Button color="inherit" onClick={()=>null}>
+              <Typography variant={'h6'}>Login</Typography>
+            </Button>
+          </BtContainer>
         </Toolbar>
       </AppBar>
     </div>

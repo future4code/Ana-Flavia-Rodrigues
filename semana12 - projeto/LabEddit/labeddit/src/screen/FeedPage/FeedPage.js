@@ -32,10 +32,10 @@ const  FeedPage = () => {
       <CardContent>
         <TextField id="outlined-basic" label="Escreva seu Post" variant="outlined" />
       </CardContent>
-      <CardActions>
-        <Button size="small" variant="contained" 
+          <CardActions>
+            <Button size="small" variant="contained" 
             color="primary" >Postar</Button>
-      </CardActions>
+          </CardActions>
     </Card>
     <Card className={classes.root}>
         <CardActionArea>

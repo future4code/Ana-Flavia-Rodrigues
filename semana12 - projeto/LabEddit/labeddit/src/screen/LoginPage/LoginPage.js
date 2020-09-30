@@ -1,97 +1,112 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
-import {MainContainer , Form} from './styled';
 import Button from '@material-ui/core/Button';
-import {goToRegisterPage} from '../../router/Coordinator'
-import { useHistory } from 'react-router-dom';
-import LabedditLogo from '../../assets/logo.png'
+import TextField from '@material-ui/core/TextField';
+import React, { useState } from 'react';
+import LabedditLogo from '../../assets/logo.png';
+import { Login } from '../../services/user';
+import { FormContainer, MainContainer, LoginContainer, SignUpButtonContainer } from './styled';
 
-const  LoginPage = () => {
-  return(
-    <div>
-      <img alt={'logo'} src={LabedditLogo}/>
-      <form>
-{/* inputs do Material           */}
-      <TextField 
-        label={'E-mail'} 
-        type={'email'}
-      />
+const LoginPage = () => {
+  //criar um estado unico para mandar um unico objeto para a API com os campos requeridos
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  })
 
-      <TextField 
-        label={'Senha'} 
-        type={'password'}
-      />
-{/* se não colocar o botão de submit noo form, ele não faz a verficação dos campos */}
-      <Button 
-        type={'submit'}
-        variant={'contained'}
-        color={'primary'}
-        >
-          Fazer Login
+  //função para controlar o input. Como temos um estado com os objetos, precisamos de apenas uma função
+  const handleInputChange = (event) => {
+    // const val = event.target.value
+    // const name = event.target.name
+    //usando a desestruturação : (é importante que o name tenha o mesmo nome que o estado
+    //para que um campo não seja alterado se estiver sendo digitado em outro lugar)
+    const { value, name } = event.target
+    setForm(
+      { ...form, [name]: value }
+    )
+
+  }
+
+  const onClickLogin = (event) => {
+    //o botão submit recarrega a página quando clicado(comportamento padrão)
+    //para evitar isso vamos tirar todos os comportamentos padrão do botão
+    event.preventDefault()
+    //tenho que manter a validação do campo e condicionar a continuidade a validação
+    //só fazendo a requisição se o formulario estiver valido
+    const element = document.getElementById('login_form')
+    const isValid = element.checkValidity()
+    //validando o input
+    element.reportValidity()
+    if (isValid) {
+      //body enviado como parametro para a função
+       Login(form)
+    }
+    
+  }
+
+  return (
+    <MainContainer>
+      <img alt={'logo'} src={LabedditLogo} />
+      <form id={'login_form'}>
+        {/* inputs do Material           */}
+        <LoginContainer>
+          <FormContainer>
+            <TextField
+              label={'E-mail'}
+              //captar valor digitado 
+              value={form.email}
+              name={'email'}
+              onChange={handleInputChange}
+              type={'email'}
+              // para que o input utilize todo o espaço disponivel
+              fullWidth
+              // margem para os imputs não ficarem colados uns aos outros
+              margin={'normal'}
+              // campo requirido
+              required
+              //para o foco ir direto nesse campo quando a tela abrir
+              autoFocus
+            />
+
+            <TextField
+              label={'Senha'}
+              type={'password'}
+              fullWidth
+              margin={'normal'}
+              required
+              value={form.password}
+              name={'password'}
+              onChange={handleInputChange}
+            />
+          </FormContainer>
+          {/* se não colocar o botão de submit no form, ele não faz a verficação dos campos */}
+
+          <Button
+            onClick={onClickLogin}
+            type={'submit'}
+            variant={'contained'}
+            color={'primary'}
+            fullWidth
+            margin={'normal'}
+          >
+
+            Fazer Login
       </Button>
-    </form>
-    <Button 
-        type={'submit'}
-        variant={'text'}
-        color={'primary'}
+        </LoginContainer>
+      </form>
+      <SignUpButtonContainer>
+        <Button
+          type={'submit'}
+          variant={'text'}
+          color={'primary'}
+          fullWidth
         >
           Não tem cadastro? Clique aqui
     </Button>
-
-    </div>
+      </SignUpButtonContainer>
+    </MainContainer>
   )
-} 
+}
 
 
 
-// // const useStyles = makeStyles((theme) => ({
-// //   root: {
-// //     '& .MuiTextField-root': {
-// //       margin: theme.spacing(1),
-// //       width: '25ch',
-// //     },
-// //   },
-// // }));
-
-// // const  LoginPage = () => {
-// //     const history = useHistory()  
-// //     const classes = useStyles();
-
-// //   return (
-// //     <MainContainer>
-// //       <img alt={'logo'} src={LabedditLogo}/>  
-// //         <Form className={classes.root} >
-        
-// //             <TextField 
-// //             required id="standard-email-input" 
-// //             label="E-mail"
-// //             type="" 
-// //              />
-             
-// //             <TextField
-// //             id="standard-password-input"
-// //             label="Password"
-// //             type="password"
-// //             autoComplete="current-password"
-// //             />
-           
-// //             <p><Button 
-// //             variant="contained" 
-// //             color="primary" 
-// //             href="#contained-buttons">
-// //                 Entrar
-// //             </Button></p>
-// //             <p><Button 
-// //             variant= "text" 
-// //             color="secundary" 
-// //             onClick={() => goToRegisterPage(history)}>
-// //                 Não é cadastrado? Clique aqui
-// //             </Button></p>
-// //         </Form>
-   
-// //     </MainContainer>
-// //     )
-// }
 
 export default LoginPage

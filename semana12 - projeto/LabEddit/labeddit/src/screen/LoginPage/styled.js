@@ -1,24 +1,30 @@
 import styled from 'styled-components'
 
 export const MainContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-flex-wrap: wrap;
-margin:0 auto;
-margin-top: 30px;
-width: 30vw;
-height: 50vh;
-border: 1px solid #c3c3c3
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-top: 30px;
 `
 
-export const Form = styled.form`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-flex-wrap: wrap;
-margin:0 auto;
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 450px;
+  align-items: center;
+  margin-bottom: 20px;  
+`
+export const LoginContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 450px;
+  align-items: center;
+  margin-bottom: 20px;
+`
+export const SignUpButtonContainer = styled.div`
+  width: 80vw;
+  max-width: 450px;
 `

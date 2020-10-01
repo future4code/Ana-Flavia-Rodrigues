@@ -3,7 +3,7 @@ import { Switch, Route} from 'react-router-dom';
 import FeedPage from '../screen/FeedPage/FeedPage';
 import LoginPage from '../screen/LoginPage/LoginPage';
 import PostPage from '../screen/PostPage/PostPage';
-import RegisterPage from '../screen/RegisterPage/RegisterPage';
+import SignUp from '../screen/SignUp/SignUpPage';
 import ErrorPage from '../screen/ErrorPage/ErrorPage';
 
 
@@ -23,7 +23,7 @@ const  Router = () => {
                 </Route>
 
                 <Route exact  path = "/register">
-                    <RegisterPage/>
+                    <SignUp/>
                 </Route>
 
                 <Route>

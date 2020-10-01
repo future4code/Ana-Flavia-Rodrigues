@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,6 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import {useHistory} from 'react-router-dom';
+import { goToLogin } from '../../router/Coordinator';
+import useProtectedPage from '../../hooks/useProtectedPage';
 
 const useStyles = makeStyles({
   root: {
@@ -23,8 +26,19 @@ const useStyles = makeStyles({
 });
 
 const  FeedPage = () => {
+  //redirecionar o usuário para a página de login, caso não esteja logado
+  const history = useHistory()
   const classes = useStyles();
-  
+  //pegar o token armazenado no localStorage, caso ele exista na primeira renderização da página
+
+  // useLayoutEffect(() => {
+  //   const token = localStorage.getItem('token')
+  //   if (!token){
+  //     goToLogin(history)
+  //   }
+  // },[history])
+  //custom hooks para proteger as telas, só permitir o acesso se logado
+  useProtectedPage()
 
   return (
       <>

@@ -10,7 +10,7 @@ export const goToLogin = (history) => {
     history.push('post')
   }
   
-  export const goToRegisterPage = (history) => {
+  export const goToSignUp = (history) => {
     history.push('/register')
   }
   

@@ -6,12 +6,17 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { BtContainer , AppBarTitle } from './styled';
 import { useHistory } from 'react-router-dom'
-import { goToFeedPage } from '../../router/Coordinator';
+import { goToFeedPage, goToLogin } from '../../router/Coordinator';
 import Icone from '../../assets/iconebranco.png'
 
 
 export default function MainAppBar() {
   const history = useHistory()
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    goToLogin(history)
+  }
 
   return (
     <div >
@@ -23,8 +28,8 @@ export default function MainAppBar() {
             <img alt={'logo'} src={Icone}/>
               <AppBarTitle variant={'h6'}>LabEddit</AppBarTitle>
             </Button>
-            <Button color="inherit" onClick={()=>null}>
-              <Typography variant={'h6'}>Login</Typography>
+            <Button color="inherit" onClick={logout}>
+              <Typography variant={'h6'}>Logout</Typography>
             </Button>
           </BtContainer>
         </Toolbar>

@@ -1,7 +1,7 @@
 import Button from '@material-ui/core/Button';
 import React from 'react';
 import LabedditLogo from '../../assets/logo.png';
-import {MainContainer, SignUpButtonContainer } from './styled';
+import { MainContainer, SignUpButtonContainer } from './styled';
 import LoginForm from './LoginForm';
 import {useHistory} from 'react-router-dom';
 import { goToSignUp } from '../../router/Coordinator';
@@ -12,6 +12,7 @@ const LoginPage = () => {
   const history = useHistory()
 
   return (
+    <div>
     <MainContainer>
       <img alt={'logo'} src={LabedditLogo} />
       <LoginForm/>
@@ -27,6 +28,7 @@ const LoginPage = () => {
     </Button>
       </SignUpButtonContainer>
     </MainContainer>
+    </div>
   )
 }
 

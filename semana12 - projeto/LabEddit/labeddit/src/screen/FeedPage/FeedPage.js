@@ -1,82 +1,67 @@
-import React, { useEffect, useLayoutEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import PostCard from './PostCard'
 import {useHistory} from 'react-router-dom';
 import { goToLogin } from '../../router/Coordinator';
 import useProtectedPage from '../../hooks/useProtectedPage';
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 275,
-    margin: '0 auto',
-    marginTop: 20,
-  },
-
-  title: {
-    fontSize: 20,
-  },
- 
-});
+import {PostContainer, RecipeCardContainer} from './styled'
+import axios from 'axios'
+import {BASE_URL} from '../../constants/urls'
+import useRequestData from '../../hooks/useRequestData';
+import Loading from '../../components/Loading/Loading'
 
 const  FeedPage = () => {
+  const [recipes , setRecipes] = useState([])
+  // const recipes = useRequestData([], '/posts')
   //redirecionar o usuário para a página de login, caso não esteja logado
   const history = useHistory()
-  const classes = useStyles();
   //pegar o token armazenado no localStorage, caso ele exista na primeira renderização da página
-
-  // useLayoutEffect(() => {
-  //   const token = localStorage.getItem('token')
-  //   if (!token){
-  //     goToLogin(history)
-  //   }
-  // },[history])
-  //custom hooks para proteger as telas, só permitir o acesso se logado
+  useLayoutEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token){
+      goToLogin(history)
+    }
+  },[history])
+  // custom hooks para proteger as telas, só permitir o acesso se logado
   useProtectedPage()
 
+  useEffect(()=>{
+    axios.get(`${BASE_URL}/posts`,{
+      headers:{
+        Authorization : localStorage.getItem('token')
+      }
+    })
+    .then((response)=>{
+      setRecipes(response.data.posts)
+      
+    })
+    .catch((error)=>(console.log(error)))
+  },[])
+
+  const renderPostList = () => {
+    return (
+        recipes.map((post) => {
+            return (
+                <PostCard 
+                key={post.id}
+                title={post.title}
+                text={post.text}
+                userName={post.username}
+                post={post}
+                postId={post.id}
+                comments={post.commentsCount}
+                create={post.createdAt}
+                votesCount={post.votesCount}
+                />
+            )
+        })
+    )
+}
+console.log(recipes)
   return (
-      <>
-    <Card className={classes.root}>
-      <CardContent>
-        <TextField id="outlined-basic" label="Escreva seu Post" variant="outlined" />
-      </CardContent>
-          <CardActions>
-            <Button size="small" variant="contained" 
-            color="primary" >Postar</Button>
-          </CardActions>
-    </Card>
-    <Card className={classes.root}>
-        <CardActionArea>
-        <CardMedia
-            className={classes.media}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-        />
-        <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-            Nome do Usuário
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-            Texto do Post
-        </Typography>
-        </CardContent>
-        </CardActionArea>
-    <CardActions>
-    <Button size="small" color="primary">
-    curtir
-    </Button>
-    <Button size="small" color="primary">
-    Comentarios
-    </Button>
-    </CardActions>
-    </Card>
-    </>
+    
+    <PostContainer>
+     {recipes.length > 0 ? renderPostList() : <Loading/>}
+    </PostContainer>
   );
 }
 

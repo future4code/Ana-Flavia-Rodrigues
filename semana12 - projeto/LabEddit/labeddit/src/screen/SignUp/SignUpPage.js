@@ -1,7 +1,7 @@
 import Button from '@material-ui/core/Button';
 import React from 'react';
 import LabedditLogo from '../../assets/logo.png';
-import {MainContainer} from './styled';
+import { MainContainer} from './styled';
 import SignUpForm from './SignUpForm';
 import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 

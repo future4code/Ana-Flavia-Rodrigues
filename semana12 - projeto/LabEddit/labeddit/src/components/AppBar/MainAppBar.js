@@ -19,21 +19,20 @@ export default function MainAppBar() {
   }
 
   return (
-    <div >
-      <AppBar position="static">
-        
-        <Toolbar>
-          <BtContainer>
-            <Button color="inherit" onClick={()=>goToFeedPage(history)}>
-            <img alt={'logo'} src={Icone}/>
-              <AppBarTitle variant={'h6'}>LabEddit</AppBarTitle>
-            </Button>
-            <Button color="inherit" onClick={logout}>
-              <Typography variant={'h6'}>Logout</Typography>
-            </Button>
-          </BtContainer>
-        </Toolbar>
-      </AppBar>
-    </div>
+   
+    <AppBar>
+      <Toolbar>
+        <BtContainer>
+          <Button color={"inherit"} onClick={() => goToFeedPage(history)}>
+            <img src={Icone} />
+            <AppBarTitle variant={'h6'}>LabEddit</AppBarTitle>
+          </Button>
+          <Button color={"inherit"} onClick={logout}>
+            <Typography variant={'h6'}>LOGOUT</Typography>
+          </Button>
+        </BtContainer>
+      </Toolbar>
+    </AppBar>
+    
   );
 }

@@ -24,3 +24,7 @@ export const SignupContainer = styled.div`
   align-items: center;
   margin-bottom: 20px;
 `
+export const LogoSize = styled.img`
+width: 70vw;
+max-width: 350px;
+`

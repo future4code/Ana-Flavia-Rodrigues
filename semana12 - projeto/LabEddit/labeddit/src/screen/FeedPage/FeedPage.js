@@ -1,13 +1,16 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import PostCard from './PostCard'
 import {useHistory} from 'react-router-dom';
-import { goToLogin } from '../../router/Coordinator';
+import { goToCreatePost, goToLogin  } from '../../router/Coordinator';
 import useProtectedPage from '../../hooks/useProtectedPage';
-import {PostContainer, RecipeCardContainer} from './styled'
+import {AddPostButton, FormFeedContainer, PostContainer, RecipeCardContainer} from './styled'
 import axios from 'axios'
 import {BASE_URL} from '../../constants/urls'
 import useRequestData from '../../hooks/useRequestData';
 import Loading from '../../components/Loading/Loading'
+import PostForm from './PostForm';
+import {goToPostPage} from '../../router/Coordinator'
+import AddCommentIcon from '@material-ui/icons/AddComment';
 
 const  FeedPage = () => {
   const [recipes , setRecipes] = useState([])
@@ -42,12 +45,11 @@ const  FeedPage = () => {
         recipes.map((post) => {
             return (
                 <PostCard 
+                onClick={() => goToPostPage(history, post.id)}
                 key={post.id}
-                title={post.title}
+                titlePost={post.title}
                 text={post.text}
                 userName={post.username}
-                post={post}
-                postId={post.id}
                 comments={post.commentsCount}
                 create={post.createdAt}
                 votesCount={post.votesCount}
@@ -58,10 +60,14 @@ const  FeedPage = () => {
 }
 console.log(recipes)
   return (
-    
-    <PostContainer>
+    <FormFeedContainer>
+
+    <AddPostButton color="primary" onClick={()=>goToCreatePost(history)}>
+      <AddCommentIcon/>
+    </AddPostButton>
      {recipes.length > 0 ? renderPostList() : <Loading/>}
-    </PostContainer>
+    
+    </FormFeedContainer>
   );
 }
 

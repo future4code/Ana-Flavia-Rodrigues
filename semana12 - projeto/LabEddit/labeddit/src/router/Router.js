@@ -5,6 +5,8 @@ import LoginPage from '../screen/LoginPage/LoginPage';
 import PostPage from '../screen/PostPage/PostPage';
 import SignUp from '../screen/SignUp/SignUpPage';
 import ErrorPage from '../screen/ErrorPage/ErrorPage';
+import CreatePostPage from '../screen/CreatePostPage/CreatePostPage';
+
 
 
 const  Router = () => {
@@ -18,13 +20,17 @@ const  Router = () => {
                     <FeedPage/>
                 </Route>
 
-                <Route exact  path = "/post">
+                <Route exact  path = "/post/:id">
                     <PostPage/>
                 </Route>
 
                 <Route exact  path = "/register">
                     <SignUp/>
                 </Route>
+                <Route exact  path = "/create">
+                    <CreatePostPage/>
+                </Route>
+
 
                 <Route>
                     <ErrorPage/>

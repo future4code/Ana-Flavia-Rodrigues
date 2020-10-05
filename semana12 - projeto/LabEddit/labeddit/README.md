@@ -9,13 +9,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <h1 align="center">LabEddit</h1>
 
 ## Descrição do Projeto
-<p align="center">Projeto desenvolvido com a finalidade de uma rede social. O usuário tem que estar logado para poder intragir, para isso deverá se cadastrar .</p>
-<p>Uma vez cadastrado, poderá ver postagens de outros usuários e criar suas p´ropias postagens.Poderá curtir, descurtir e comentar as postagens de outros usuários.</p>
-As telas são protegidas só permitindo a nevegação se o  usuário for cadastrado, senão voltará para pagina de login/casdatro.
+<p align="center">Projeto desenvolvido com a finalidade de criar uma rede social. O usuário tem que estar logado para poder interagir, para isso deverá se cadastrar .</p>
+<p>Uma vez cadastrado, poderá ver postagens de outros usuários e criar suas própias postagens. Poderá curtir, descurtir e comentar as postagens de outros usuários.</p>
+As telas são protegidas só permitindo a navegação se o  usuário for cadastrado, senão voltará para página de login/casdatro.
+
+
 ### Status do Projeto
 
 <h4 align="center"> 
-	🚧  LabeX 🚀  - Em construção...  🚧
+	🚧  <img src='src\assets\icone.png'> LabEddit - Em construção...  🚧
 </h4>
 
 ### Features
@@ -41,5 +43,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### 💻 Autora 👩
 <h4>
-Ana Flavia Oliveira Rodrigues
+Ana Flavia O Rodrigues
 </h4>

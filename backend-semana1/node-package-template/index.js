@@ -39,30 +39,50 @@
 
 // Execício 2
 
-const operation = process.argv[2]
-const number1 = Number(process.argv[3]);
-const number2 = Number(process.argv[4]);
+// const operation = process.argv[2];
+// const number1 = process.argv[3];
+// const number2 = process.argv[4];
+// const calculaValor = (operation,number1,number2) =>  {
+//         let result;
 
-const result = ()=>{
+//     switch(operation){
+//         case "soma":
+//            result = (Number(number1) +Number(number2))
+//                 console.log(result)
+//             break;
+//         case "subt":
+//             result =(number1 - number2)
+//                 console.log(result)
+//             break;
+//         case "mult":
+//             result =(number1 * number2)
+//                 console.log(result)
+//             break;
+//         case "div":
+//             result =(number1 / number2)
+//                 console.log(result)     
+//             break;
+//     }
+// };
+//     calculaValor (operation,number1,number2);
 
-    switch(operation){
-        case "soma":
-           (number1 + number2) 
-            break;
-        case "subt":
-            (number1 - number2)
-            break;
-        case "mult":
-            (number1 * number2)
-            break;
-        case "subt":
-            (number1 / number2)
-            break;
-    }
-
-}
 
 
+
+
+
+
+// Exercício 3
+
+// const tarefa = process.argv[2];
+// const listaTarefa = ["estudar", "preparar o lanche", "lavar os cabelos"]
+
+// const adicionarTarefa = (tarefa) => {
+//     listaTarefa.push(tarefa);
+//     console.log("Tarefa adicionada com sucesso! tarefas:",listaTarefa)
+
+// }
+// adicionarTarefa(tarefa)
 
 
 

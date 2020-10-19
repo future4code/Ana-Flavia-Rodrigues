@@ -1,0 +1,13 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "start-ex3":"node index.js"
+  },
+  "author": "\"Ana Flavia\"",
+  "license": "ISC"
+}

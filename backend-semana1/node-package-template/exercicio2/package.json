@@ -1,0 +1,17 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "soma":"node index.js 'soma'",
+    "subt":"node index.js 'subt'",
+    "mult":"node index.js 'mult'",
+    "div":"node index.js 'div'"
+
+  },
+  "author": "\"Ana Flavia\"",
+  "license": "ISC"
+}

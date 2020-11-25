@@ -54,7 +54,10 @@ app.get('/countries/search', (req: Request, res: Response) =>{
 
 
 app.put('/countries/edit/:id' , (req: Request, res: Response)=>{
-
+    const id = req.params.id;
+    res.status(200).send({
+        id: id
+    });
 
 })
 
@@ -74,10 +77,35 @@ app.get('/countries/:id' , (req: Request, res:Response) =>{
     
 })
 
+app.delete('/countries/:id' , (req: Request, res: Response) => {
+    let errorCode : number = 401
+    try{
+        if(!req.headers.authorization){
+            throw new Error()
+        }
+        const countryIndex: number = countries.findIndex(
+            (country) => country.id === Number(req.params.id)
+        )
+
+        if (countryIndex === -1){
+            errorCode = 404
+            throw new Error()
+        }
+
+        countries.splice(countryIndex, 1)
+
+        res.status(200).end()
+
+    } catch (error){
+        res.status(errorCode).end
+
+    }
+})
 
 
 
 
-app.listen(3003, ()=>{
+
+app.listen(3003, ()=>{//para o servidor escutar a porta 3003
     console.log("Servidor pronto!")
 }) 

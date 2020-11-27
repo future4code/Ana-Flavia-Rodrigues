@@ -2,6 +2,9 @@ import knex from "knex";
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { testEndpoint } from "./endpoints/testEndpoint";
+import { getAtorById } from "./endpoints/getAtorById";
+import { getAtorByQueryParam } from "./endpoints/getAtorByQueryParam";
 
 /**************************************************************/
 
@@ -9,7 +12,7 @@ dotenv.config();
 
 /**************************************************************/
 
-const connection = knex({   
+export const connection = knex({   
   client: "mysql",
   connection: {
     host: process.env.DB_HOST,
@@ -26,6 +29,16 @@ const app = express();
 
 app.use(express.json());
 
+/**************************************************************/
+
+app.get('/', testEndpoint)
+app.get("/ator/:id", getAtorById)
+app.get("/ator", getAtorByQueryParam)
+
+
+
+/**************************************************************/
+
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;
@@ -35,18 +48,3 @@ const server = app.listen(process.env.PORT || 3003, () => {
   }
 });
 
-/**************************************************************/
-
-app.get('/', testEndpoint)
-
-async function testEndpoint(req:Request, res:Response): Promise<void>{
-  try {
-    const result = await connection.raw(`
-      SELECT * FROM Actor
-    `)
-
-    res.status(200).send(result)
-  } catch (error) {
-    res.status(400).send(error.message)
-  }
-}
